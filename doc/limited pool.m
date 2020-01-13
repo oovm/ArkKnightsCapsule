@@ -3,8 +3,12 @@
 SetDirectory@NotebookDirectory[];
 
 
-url = "https://github.com/GalAster/ArkKnightsCapsule/releases/download/v1.0.0/Distribution.mx";
+url = "https://github.com/GalAster/ArkKnightsCapsule/releases/download/v1.2.0/Distribution.mx";
 Dataset[data = N /@ Import[url]]
+
+
+(* ::Section:: *)
+(*F*)
 
 
 plot[names_, r_] := DiscretePlot[
@@ -19,16 +23,26 @@ grand[names_, r_] := DiscretePlot[
 ];
 
 
-plot[{"\:9650\:5b9a\:51fa\:516d\:661f", "\:4e8c\:6c60\:51fa\:516d\:661f", "\:9650\:5b9a\:6307\:5b9a\:516d\:661f"}, 100]
-grand[{"\:9650\:5b9a\:51fa\:516d\:661f", "\:4e8c\:6c60\:51fa\:516d\:661f", "\:9650\:5b9a\:6307\:5b9a\:516d\:661f"}, 200]
+(* ::Section:: *)
+(*F*)
 
 
-plot[{"\:4e8c\:6c60\:53cc\:516d\:661f", "\:9650\:5b9a\:53cc\:516d\:661f"}, 300]
-grand[{"\:4e8c\:6c60\:53cc\:516d\:661f", "\:9650\:5b9a\:53cc\:516d\:661f"}, 400]
+pdf = plot[{"\:9650\:5b9a\:51fa\:516d\:661f", "\:4e8c\:6c60\:51fa\:516d\:661f", "\:9650\:5b9a\:6307\:5b9a\:516d\:661f"}, 100]
+cdf = grand[{"\:9650\:5b9a\:51fa\:516d\:661f", "\:4e8c\:6c60\:51fa\:516d\:661f", "\:9650\:5b9a\:6307\:5b9a\:516d\:661f"}, 200]
+Export["limited pool/single_six_pdf.png", pdf, Background -> None];
+Export["limited pool/single_six_cdf.png", cdf, Background -> None];
 
 
-plot[{"\:4e8c\:6c60\:53cc\:6ee1\:6f5c", "\:9650\:5b9a\:53cc\:6ee1\:6f5c"}, 1200]
-grand[{"\:4e8c\:6c60\:53cc\:6ee1\:6f5c", "\:9650\:5b9a\:53cc\:6ee1\:6f5c"}, 1600]
+pdf = plot[{"\:4e8c\:6c60\:53cc\:516d\:661f", "\:9650\:5b9a\:53cc\:516d\:661f"}, 300]
+cdf = grand[{"\:4e8c\:6c60\:53cc\:516d\:661f", "\:9650\:5b9a\:53cc\:516d\:661f"}, 400]
+Export["limited pool/double_six_pdf.png", pdf, Background -> None];
+Export["limited pool/double_six_cdf.png", cdf, Background -> None];
+
+
+cdf = plot[{"\:4e8c\:6c60\:53cc\:6ee1\:6f5c", "\:9650\:5b9a\:53cc\:6ee1\:6f5c"}, 1200]
+pdf = grand[{"\:4e8c\:6c60\:53cc\:6ee1\:6f5c", "\:9650\:5b9a\:53cc\:6ee1\:6f5c"}, 1600]
+Export["limited pool/finish_six_pdf.png", pdf, Background -> None];
+Export["limited pool/finish_six_cdf.png", cdf, Background -> None];
 
 
 
