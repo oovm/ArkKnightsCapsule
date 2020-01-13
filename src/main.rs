@@ -11,7 +11,7 @@ use std::fs::File;
 use std::io::prelude::*;
 use time::PreciseTime;
 
-const TIMES: i32 = 1000_0000;
+const TIMES: i32 = 1_0000_0000;
 
 fn main() -> std::io::Result<()> {
     let start = PreciseTime::now();
