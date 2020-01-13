@@ -1,0 +1,22 @@
+[package]
+name = "run"
+version = "0.1.0"
+authors = ["Aster <galaster@foxmail.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+time = "*"
+rand="*"
+serde = "*"
+serde-pickle = "*"
+
+[lib]
+name = "orz"
+crate-type = ["cdylib"]
+
+
+[profile.release]
+opt-level = 3
+lto = true
