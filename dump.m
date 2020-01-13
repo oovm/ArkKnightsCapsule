@@ -19,7 +19,7 @@ Export[
 		"\:9650\:5b9a\:53cc\:516d\:661f" -> fit@Normal@data["double_six"],
 		"\:9650\:5b9a\:53cc\:6ee1\:6f5c" -> fit@Normal@data["double_finish"]
 	|>
-]
+];
 
 
 Export[
@@ -34,4 +34,4 @@ Export[
 		"\:9650\:5b9a\:53cc\:516d\:661f" -> Sort@Tally@Normal@data["double_six"],
 		"\:9650\:5b9a\:53cc\:6ee1\:6f5c" -> Sort@Tally@Normal@data["double_finish"]
 	|>
-]
+];
