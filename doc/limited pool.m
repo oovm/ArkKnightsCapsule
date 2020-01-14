@@ -3,8 +3,9 @@
 SetDirectory@NotebookDirectory[];
 
 
-url = "https://github.com/GalAster/ArkKnightsCapsule/releases/download/v1.4.0/Distribution.mx";
-Dataset[data = N /@ Import[url]]
+(* ::Text:: *)
+(*url = "https://github.com/GalAster/ArkKnightsCapsule/releases/download/v1.4.0/Distribution.mx";*)
+(*Dataset[data = N /@ Import[url]]*)
 
 
 (* ::Section:: *)
@@ -79,7 +80,7 @@ StringJoin[{
 
 
 v = Join[Range[1, 20], 10 * Range[3, 9], 100 * Range[1, 20]];
-try[key_] := Table[formatNumber[100Probability[x < i, x\[Distributed]data[key]], 2] <> "%", {i, v}]
+try[key_] := Table[formatNumber[100Probability[x <= i, x\[Distributed]data[key]], 2] <> "%", {i, v}]
 
 
 StringJoin[{
@@ -89,8 +90,8 @@ StringJoin[{
 }]
 
 
-v = Join[Range[1, 50], 10 * Range[6, 9], 100 * Range[1, 29], 1000 * Range[3, 10]];
-try[key_] := Table[formatNumber[100Probability[x < i, x\[Distributed]data[key]]] <> "%", {i, v}]
+v = Join[Range[1, 50], 10 * Range[6, 9], 100 * Range[1, 19], 1000 * Range[2, 10]];
+try[key_] := Table[formatNumber[100Probability[x <= i, x\[Distributed]data[key]]] <> "%", {i, v}]
 
 
 StringJoin[{

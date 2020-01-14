@@ -3,12 +3,12 @@
 SetDirectory@NotebookDirectory[];
 
 
-data = Import["monte_carlo.json","RawJSON"];
+data = Import["monte_carlo.json", "RawJSON"];
 fit[list_] := Block[
 	{values, data},
 	values = Rest@Replace[list, {x___, 0..} :> {x}];
-	data = {Normalize[values, Total], Range@Length@values, False};
-	DataDistribution["Empirical", data, 1, Total@values]
+data = {Normalize[values, Total], Range@Length@values, False};
+DataDistribution["Empirical", data, 1, Total@values]
 ];
 
 
@@ -27,4 +27,4 @@ Export[
 ];
 
 
-data=Import["Distribution.mx"];
+data = Import["Distribution.mx"];
