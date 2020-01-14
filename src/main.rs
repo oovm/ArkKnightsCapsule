@@ -1,12 +1,13 @@
 mod lib;
 use lib::statistics::*;
 
+use serde_json;
 use std::collections::BTreeMap;
 use std::fs::File;
 use std::io::prelude::*;
 use time::PreciseTime;
 
-const TIMES: i32 = 1_0_0000;
+const TIMES: i32 = 1_0000_0000;
 
 fn main() -> std::io::Result<()> {
     let start = PreciseTime::now();
@@ -20,9 +21,8 @@ fn main() -> std::io::Result<()> {
     map.insert("xd_double".to_string(), test_xd_double(TIMES));
     map.insert("xd_finish".to_string(), test_xd_finish(TIMES));
     //
-    let serialized = serde_pickle::to_vec(&map, true).unwrap();
-    let mut file = File::create("monte_carlo.pkl")?;
-    file.write_all(&serialized)?;
+    let mut file = File::create("monte_carlo.json")?;
+    file.write_all(&serde_json::to_vec(&map)?).unwrap();
     //
     let end = PreciseTime::now();
     println!("finished in {} seconds", start.to(end));

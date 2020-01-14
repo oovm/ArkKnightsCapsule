@@ -1,7 +1,7 @@
-use histogram::Histogram;
-use std::collections::BTreeMap;
-use rayon::prelude::*;
 use crate::lib::random::*;
+use histogram::Histogram;
+use rayon::prelude::*;
+use std::collections::BTreeMap;
 
 pub fn test_sp_single(times: i32) -> BTreeMap<u64, u64> {
     let mut histogram = Histogram::new();

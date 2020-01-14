@@ -3,12 +3,12 @@
 SetDirectory@NotebookDirectory[];
 
 
-data = Import@"monte_carlo.wxf";
+data = Import["monte_carlo.json","RawJSON"];
 fit[list_] := Block[
 	{values, data},
 	values = Rest@Replace[list, {x___, 0..} :> {x}];
-data = {Normalize[values, Total], Range@Length@values, False};
-DataDistribution["Empirical", data, 1, Total@values]
+	data = {Normalize[values, Total], Range@Length@values, False};
+	DataDistribution["Empirical", data, 1, Total@values]
 ];
 
 
@@ -25,3 +25,6 @@ Export[
 		"\:9650\:5b9a\:53cc\:6ee1\:6f5c" -> fit@Values@data["xd_finish"]
 	|>
 ];
+
+
+data=Import["Distribution.mx"];

@@ -9,14 +9,9 @@ edition = "2018"
 [dependencies]
 time = "*"
 rand="*"
-serde = "*"
-serde-pickle = "*"
 rayon= "*"
-
-[lib]
-name = "orz"
-crate-type = ["cdylib"]
-
+histogram="*"
+serde_json = "*"
 
 [profile.release]
 opt-level = 3
